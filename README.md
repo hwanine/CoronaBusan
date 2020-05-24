@@ -25,13 +25,12 @@
 
 - 2020\. 05. 22: 프로젝트 계획 수립
 - 2020\. 05. 23: MVVM 아키텍처 구조 구현
+
+![image](https://user-images.githubusercontent.com/57826388/82756361-c6333280-9e14-11ea-8ef1-5d71458f86fc.png)
+
 - 2020\. 05. 04: News Search 기능 구현
   - Retrofit + RxJava
   
 ![image](https://user-images.githubusercontent.com/57826388/82755696-473bfb00-9e10-11ea-85c0-102db3093c72.png)
 
-<br>
 
-## 설계
-
-![image](https://user-images.githubusercontent.com/57826388/82756361-c6333280-9e14-11ea-8ef1-5d71458f86fc.png)
