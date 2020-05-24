@@ -2,7 +2,7 @@
 
 ## 개요
 
-![CoronaBusan](https://user-images.githubusercontent.com/57826388/82758356-0a2c3480-9e21-11ea-8cf7-a4adbd00361b.png)
+![CoronaBusan](https://user-images.githubusercontent.com/57826388/82758378-347df200-9e21-11ea-8340-e52c3510ce44.png)
 
 본 프로젝트는 부산광역시 시민들을 위한 부산시 코로나19 종합 현황판 애플리케이션입니다.  
 부산광역시 시민들이 누구나 쉽고 빠르게 코로나19 관련 소식을 접할 수 있고, 대처할 수 있도록 하는 목적으로 개발을 진행하게 되었습니다.  
