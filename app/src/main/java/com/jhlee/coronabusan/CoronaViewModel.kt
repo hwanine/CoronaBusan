@@ -10,6 +10,8 @@ import android.text.Spanned
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.jhlee.coronabusan.adapter.NewsAdapter
 import java.text.SimpleDateFormat
 import java.util.*
@@ -50,10 +52,6 @@ class CoronaViewModel(application: Application): AndroidViewModel(application){
 
     }
 
-    fun getAdapter(): NewsAdapter {
-        return newsAdapter
-    }
-
     fun getTitle(pos: Int): Spanned {
         return Html.fromHtml(newsItem.get(pos).title)
     }
@@ -70,6 +68,10 @@ class CoronaViewModel(application: Application): AndroidViewModel(application){
         uri.setValue(Uri.parse(newsItem.get(pos).originallink))
     }
 
+    fun viewInit(recyclerView: RecyclerView) {
+        recyclerView.adapter = newsAdapter
+        recyclerView.layoutManager = LinearLayoutManager(getApplication())
+    }
     fun dateFormat(str: String): String {
 
         val formatterCal = SimpleDateFormat("E, dd MMM yyyy HH:mm:ss Z", Locale.US)

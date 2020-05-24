@@ -17,11 +17,9 @@ import com.jhlee.coronabusan.CoronaViewModel
 import com.jhlee.coronabusan.R
 import com.jhlee.coronabusan.databinding.FragmentSearchBinding
 
-
-private lateinit var vm: CoronaViewModel
-
-
 class FragmentSearch : Fragment() {
+
+    private lateinit var vm: CoronaViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,8 +27,7 @@ class FragmentSearch : Fragment() {
     ): View? {
         val binding: FragmentSearchBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_search, container, false)
         vm = ViewModelProvider(this).get(CoronaViewModel::class.java)
-        binding.fragmentRecycleView.adapter = vm.getAdapter()
-        binding.fragmentRecycleView.layoutManager = LinearLayoutManager(context)
+        vm.viewInit(binding.fragmentRecycleView)
         vm.getNews()
         vm.uri?.observe(viewLifecycleOwner, Observer { uri ->
             val intent = Intent(Intent.ACTION_VIEW, uri);
@@ -48,6 +45,4 @@ class FragmentSearch : Fragment() {
         binding.lifecycleOwner = this
         return binding.root
     }
-
-
 }
