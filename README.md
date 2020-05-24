@@ -30,7 +30,7 @@
 - 2020\. 05. 22: 프로젝트 계획 수립
 - 2020\. 05. 23: MVVM 아키텍처 구조 구현
 
-![노트1_0(7)](https://user-images.githubusercontent.com/57826388/82759653-b96d0980-9e29-11ea-90b3-7aebabf8d9e8.jpg)
+![노트1_0(8)](https://user-images.githubusercontent.com/57826388/82759796-73fd0c00-9e2a-11ea-8764-873e3b6dea24.jpg)
 
 <br>
 
