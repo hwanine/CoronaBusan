@@ -6,7 +6,7 @@ data class ResultGetSearchNews(
     var display: Int = 0,
     var items: List<NewsItems>
 )
-g
+
 data class NewsItems(
     var title: String = "",
     var originallink: String = "",
