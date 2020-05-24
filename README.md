@@ -32,7 +32,6 @@
 
 ![노트1_0(7)](https://user-images.githubusercontent.com/57826388/82759653-b96d0980-9e29-11ea-90b3-7aebabf8d9e8.jpg)
 
-
 <br>
 
 - 2020\. 05. 04: News Search 기능 구현
