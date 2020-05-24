@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable name="CoronaViewModel"
+            type="com.jhlee.coronabusan.CoronaViewModel" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+    </data>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        app:cardCornerRadius="20dp"
+        app:cardUseCompatPadding="true"
+        android:onClick="@{() -> CoronaViewModel.toUri(pos)}">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/news_title"
+                        android:text="@{CoronaViewModel.getTitle(pos)}"
+                        android:layout_weight="1"
+                        android:layout_gravity="top"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="17dp"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/news_date"
+                        android:text="@{CoronaViewModel.getDate(pos)}"
+                        android:textSize="11dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
