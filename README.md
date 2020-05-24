@@ -1,4 +1,4 @@
-# CoronaBusan
+# Corona Busan
 
 ## 개요
 
