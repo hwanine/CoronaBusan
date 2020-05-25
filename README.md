@@ -34,7 +34,7 @@
 
 <br>
 
-- 2020\. 05. 04: News Search 기능 구현
+- 2020\. 05. 24: News Search 기능 구현
   - Retrofit + RxJava
   
 ![image](https://user-images.githubusercontent.com/57826388/82755696-473bfb00-9e10-11ea-85c0-102db3093c72.png)
