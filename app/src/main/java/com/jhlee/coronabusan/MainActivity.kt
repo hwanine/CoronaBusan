@@ -14,5 +14,6 @@ class MainActivity : AppCompatActivity() {
         val vpAdapter: VPAdapter =
             VPAdapter(supportFragmentManager)
         viewpager.adapter = vpAdapter
+        tab.setupWithViewPager(viewpager)
     }
 }

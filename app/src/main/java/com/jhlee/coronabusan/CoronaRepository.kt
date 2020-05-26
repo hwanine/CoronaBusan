@@ -43,8 +43,8 @@ class CoronaRepository(application: Application) {
     }*/
 
 
-    fun getNews(n: Int): Observable<ResultGetSearchNews> = api
-        .getSearchNews("코로나 부산", 100, n)
+    fun getNews(n: Int, str: String): Observable<ResultGetSearchNews> = api
+        .getSearchNews(str, 10, n)
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
 }

@@ -33,7 +33,6 @@ class NewsAdapter(viewModel: CoronaViewModel) : RecyclerView.Adapter<NewsAdapter
             binding.pos = pos
             binding.coronaViewModel = viewModel
             binding.executePendingBindings()
-
         }
     }
 }

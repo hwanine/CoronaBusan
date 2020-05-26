@@ -13,6 +13,7 @@ import java.util.*
 class VPAdapter(fm: FragmentManager?) :
     FragmentPagerAdapter(fm!!) {
     private val items: ArrayList<Fragment> = ArrayList()
+    private val itext: ArrayList<String> = ArrayList()
     override fun getItem(position: Int): Fragment {
         return items[position]
     }
@@ -26,5 +27,14 @@ class VPAdapter(fm: FragmentManager?) :
         items.add(FragmentBoard())
         items.add(FragmentMap())
         items.add(FragmentTreat())
+
+        itext.add("관련 기사")
+        itext.add("현황판")
+        itext.add("코로나 맵")
+        itext.add("대처법")
+    }
+
+    override fun getPageTitle(position: Int): CharSequence? {
+        return itext.get(position)
     }
 }
