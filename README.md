@@ -34,10 +34,12 @@
 
 <br>
 
-- 2020\. 05. 24: News Search 기능 구현
-  - Retrofit + RxJava
+- ~ 2020\. 05. 26: News Search 기능 구현
+  - Retrofit + RxJava + Databinding
   
-![image](https://user-images.githubusercontent.com/57826388/82755696-473bfb00-9e10-11ea-85c0-102db3093c72.png)
+![image](https://user-images.githubusercontent.com/57826388/82968560-8f257280-a008-11ea-9300-4c7c8739612e.png)
+
+![image](https://user-images.githubusercontent.com/57826388/82968566-90ef3600-a008-11ea-8918-6163262d31b5.png)
 
 <br>
 
