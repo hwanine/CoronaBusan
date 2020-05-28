@@ -43,3 +43,11 @@
 
 <br>
 
+- ~ 2020\. 05. 28: 현황판, 대처법 기능 추가
+
+![image](https://user-images.githubusercontent.com/57826388/83176110-e38b3800-a157-11ea-8be9-cba44974f334.png)
+
+![image](https://user-images.githubusercontent.com/57826388/83176114-e71ebf00-a157-11ea-97ae-7485a2ee6112.png)
+
+<br>
+
