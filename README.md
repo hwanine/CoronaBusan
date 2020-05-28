@@ -17,7 +17,7 @@
 - 개발 언어: Kotlin, XML
 - 기타 환경: Git
 - 외부 자원: Google Map API, Open Api
-- 관련 기술: Mvvm, LiveData, ViewModel, Retrofit, RestApi, RxJava, Databinding
+- 관련 기술: Mvvm, LiveData, ViewModel, Retrofit, RestApi, RxJava, Databinding, Jsoup
 
 <br>
 
@@ -43,7 +43,7 @@
 
 <br>
 
-- ~ 2020\. 05. 28: 현황판, 대처법 기능 추가
+- ~ 2020\. 05. 28: 현황판, 대처법 기능 추가(현황판 - Jsoup 크롤링)
 
 ![image](https://user-images.githubusercontent.com/57826388/83176110-e38b3800-a157-11ea-8be9-cba44974f334.png)
 
