@@ -4,8 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <variable name="CoronaViewModel"
-            type="com.jhlee.coronabusan.CoronaViewModel" />
+        <variable name="SearchViewModel"
+            type="com.jhlee.coronabusan.SearchViewModel" />
 
         <variable
             name="pos"
@@ -27,7 +27,7 @@
         android:layout_marginRight="4dp"
         app:cardCornerRadius="20dp"
         app:cardUseCompatPadding="true"
-        android:onClick="@{() -> CoronaViewModel.toUri(pos)}">
+        android:onClick="@{() -> SearchViewModel.toUri(pos)}">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -37,7 +37,7 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/news_title"
-                        android:text="@{CoronaViewModel.getTitle(pos)}"
+                        android:text="@{SearchViewModel.getTitle(pos)}"
                         android:layout_weight="1"
                         android:layout_gravity="top"
                         android:layout_width="wrap_content"
@@ -46,7 +46,7 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/news_date"
-                        android:text="@{CoronaViewModel.getDate(pos)}"
+                        android:text="@{SearchViewModel.getDate(pos)}"
                         android:textSize="11dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />

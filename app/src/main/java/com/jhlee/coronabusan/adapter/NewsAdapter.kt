@@ -1,17 +1,13 @@
 package com.jhlee.coronabusan.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.jhlee.coronabusan.CoronaViewModel
-import com.jhlee.coronabusan.NewsItems
-import com.jhlee.coronabusan.R
+import com.jhlee.coronabusan.SearchViewModel
 import com.jhlee.coronabusan.databinding.NewsItemviewBinding
-import kotlinx.android.synthetic.main.news_itemview.view.*
 
 
-class NewsAdapter(viewModel: CoronaViewModel) : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
+class NewsAdapter(viewModel: SearchViewModel) : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
     private val viewModel = viewModel
 
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int): ViewHolder {
@@ -29,9 +25,9 @@ class NewsAdapter(viewModel: CoronaViewModel) : RecyclerView.Adapter<NewsAdapter
     inner class ViewHolder(binding: NewsItemviewBinding) : RecyclerView.ViewHolder(binding.root) {
         val binding = binding
 
-        fun bind(viewModel: CoronaViewModel, pos: Int) {
+        fun bind(viewModel: SearchViewModel, pos: Int) {
             binding.pos = pos
-            binding.coronaViewModel = viewModel
+            binding.searchViewModel = viewModel
             binding.executePendingBindings()
         }
     }

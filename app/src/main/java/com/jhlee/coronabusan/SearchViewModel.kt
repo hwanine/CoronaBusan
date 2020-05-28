@@ -3,40 +3,37 @@ package com.jhlee.coronabusan
 import android.annotation.SuppressLint
 import android.app.Application
 import android.net.Uri
-import android.os.Handler
-import android.os.Looper
 import android.text.Html
 import android.text.Spanned
 import android.util.Log
-import android.widget.Toast
-import androidx.core.text.toSpanned
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.jhlee.coronabusan.adapter.NewsAdapter
-import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
 
 @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
-class CoronaViewModel(application: Application): AndroidViewModel(application){
+class SearchViewModel(application: Application): AndroidViewModel(application){
     private var newsResult: MutableLiveData<ResultGetSearchNews> = MutableLiveData()
     var newsItem: ArrayList<NewsItems> = arrayListOf()
-    private val repo : CoronaRepository = CoronaRepository(application)
+    private val repo : CoronaRepository =
+        CoronaRepository(application)
     private var newsAdapter = NewsAdapter(this)
     var n = 1
     var max = 10
-
-    var searchType: String = ""
+    var check = 0
+    var searchType: MutableLiveData<String> = MutableLiveData<String>("")
     var uri: MutableLiveData<Uri> = MutableLiveData<Uri>()
 
-    @SuppressLint("CheckResult")
-    fun getNews(str: String) {
+    init {
+        getNews("코로나 부산 확진")
+    }
 
-        searchType = when {
+    fun getNews(str: String) {
+        check = 1
+        searchType.value = when {
             str.contains("부산") -> {
                 "부산"
             }
@@ -47,44 +44,40 @@ class CoronaViewModel(application: Application): AndroidViewModel(application){
                 ""
             }
         }
+        getNewsItem(str)
+    }
 
-        //newsResult = repo.getNews()
+    @SuppressLint("CheckResult")
+    fun getNewsItem(str: String) {
         repo.getNews(n, str).subscribe(
             { ResultGetSearchNews ->
                 for(i in ArrayList(ResultGetSearchNews.items).indices) {
-                    if(ResultGetSearchNews.items[i].title.contains(searchType)) {
-                        Log.d("왔어?","왔")
+                    if (ResultGetSearchNews.items[i].title.contains(searchType.value!!)) {
                         newsItem.add(ResultGetSearchNews.items[i])
                         newsAdapter.notifyDataSetChanged()
                     }
-                        n++
-                        if(newsItem.size < max && i == ResultGetSearchNews.items.size - 1) {
-                            getNews(str)
-                        } else if(newsItem.size >= max) {
-                            max += 10
-                            break
-                        }
+                    n++
+                    if (newsItem.size < max && i == ResultGetSearchNews.items.size - 1) {
+                        getNewsItem(str)
+                    } else if (newsItem.size >= max) {
+                        max += 10
+                        break
                     }
                 }
+            }
 
             , { throwable -> Log.d("Error!"," ") })
-
+    }
+    fun getAdapter(): NewsAdapter{
+        return newsAdapter
     }
 
     fun getTitle(pos: Int): Spanned {
-        try {
-            return Html.fromHtml(newsItem.get(pos).title)
-        } catch(e: Exception) {
-            return "".toSpanned()
-        }
+        return Html.fromHtml(newsItem.get(pos).title)
     }
 
     fun getDate(pos: Int): String {
-        try {
-            return dateFormat(newsItem.get(pos).pubDate)
-        } catch(e: Exception) {
-            return ""
-        }
+        return dateFormat(newsItem.get(pos).pubDate)
     }
 
     fun getNewsItem(): List<NewsItems> {
@@ -95,10 +88,10 @@ class CoronaViewModel(application: Application): AndroidViewModel(application){
         uri.setValue(Uri.parse(newsItem.get(pos).link))
     }
 
-    fun viewInit(recyclerView: RecyclerView) {
+    /*fun viewInit(recyclerView: RecyclerView) {
         recyclerView.adapter = newsAdapter
         recyclerView.layoutManager = LinearLayoutManager(getApplication())
-    }
+    }*/
 
     fun dateFormat(str: String): String {
 
@@ -109,6 +102,8 @@ class CoronaViewModel(application: Application): AndroidViewModel(application){
         val strDate = formatterStr.format(date)
         return strDate
     }
+
+
 
 }
 

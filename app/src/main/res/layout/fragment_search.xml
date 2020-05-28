@@ -3,8 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
-        <variable name="CoronaViewModel"
-            type="com.jhlee.coronabusan.CoronaViewModel" />
+        <variable name="SearchViewModel"
+            type="com.jhlee.coronabusan.SearchViewModel" />
+
     </data>
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -32,8 +33,7 @@
             <TextView
                 android:id="@+id/search_busan"
                 android:background="@drawable/search_select"
-                android:textStyle="bold"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:includeFontPadding="false"
                 android:layout_width="50dp"
                 android:layout_height="30dp"
@@ -53,8 +53,8 @@
                 android:layout_gravity="top|start"
                 android:gravity="center"
                 android:foregroundGravity="center"
-                android:text="전체"
                 android:textSize="18dp"
+                android:text="전체"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"/>
 
@@ -101,7 +101,9 @@
                     android:id="@+id/fragment_RecycleView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scrollbars="vertical" />
+                    android:scrollbars="vertical"
+                    android:scrollbarSize="5dp"
+                    app:verAdapter="@{SearchViewModel.getAdapter()}"/>
 
             </FrameLayout>
 
