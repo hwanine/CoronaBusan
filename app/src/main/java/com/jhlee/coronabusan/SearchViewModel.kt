@@ -6,8 +6,12 @@ import android.net.Uri
 import android.text.Html
 import android.text.Spanned
 import android.util.Log
+import androidx.core.net.toUri
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import com.jhlee.coronabusan.Model.CoronaRepository
+import com.jhlee.coronabusan.Model.NewsItems
+import com.jhlee.coronabusan.Model.ResultGetSearchNews
 import com.jhlee.coronabusan.adapter.NewsAdapter
 import java.text.SimpleDateFormat
 import java.util.*
@@ -25,7 +29,7 @@ class SearchViewModel(application: Application): AndroidViewModel(application){
     var max = 10
     var check = 0
     var searchType: MutableLiveData<String> = MutableLiveData<String>("")
-    var uri: MutableLiveData<Uri> = MutableLiveData<Uri>()
+    var uri: MutableLiveData<Uri> = MutableLiveData<Uri>("".toUri())
 
     init {
         getNews("코로나 부산 확진")

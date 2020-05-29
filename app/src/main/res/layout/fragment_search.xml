@@ -74,8 +74,8 @@
             <ImageView
                 android:id="@+id/search_refrash"
                 android:includeFontPadding="false"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
                 android:layout_gravity="top|end"
                 android:gravity="center"
                 android:src="@drawable/ic_refresh"

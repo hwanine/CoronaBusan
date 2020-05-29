@@ -1,6 +1,6 @@
 package com.jhlee.coronabusan.api
 
-import com.jhlee.coronabusan.ResultGetSearchNews
+import com.jhlee.coronabusan.Model.ResultGetSearchNews
 import io.reactivex.Observable
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient

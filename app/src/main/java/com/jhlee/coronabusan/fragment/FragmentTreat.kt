@@ -7,9 +7,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.jhlee.coronabusan.CustomDialog.PharmacyDialog
 
 import com.jhlee.coronabusan.R
-import com.jhlee.coronabusan.TreatDialog
+import com.jhlee.coronabusan.CustomDialog.TreatDialog
 import kotlinx.android.synthetic.main.fragment_treat.view.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -46,7 +47,10 @@ class FragmentTreat : Fragment() {
             openDlg(R.drawable.coronabusan4)
         }
         view.card_view5.setOnClickListener {
-
+            val pharmacyDlg: View = layoutInflater.inflate(R.layout.list_dialog, null)
+            val dlg =
+                PharmacyDialog(pharmacyDlg)
+            dlg.show(childFragmentManager, "pharmacyDlg")
         }
         return view.rootView
     }
@@ -59,7 +63,7 @@ class FragmentTreat : Fragment() {
 
     fun openCall(str: String) {
         var intent = Intent(Intent.ACTION_DIAL)
-        intent.data = Uri.parse("tel:051-120")
+        intent.data = Uri.parse(str)
         startActivity(intent)
     }
 

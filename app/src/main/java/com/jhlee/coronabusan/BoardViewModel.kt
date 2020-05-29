@@ -6,6 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import com.jhlee.coronabusan.Model.CoronaRepository
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -25,10 +26,16 @@ class BoardViewModel(application: Application): AndroidViewModel(application){
     }
     @SuppressLint("CheckResult")
     fun getBoard() {
+        val temp = arrayListOf<String>()
+        busanList.value = temp
+        koreaList.value = temp
+        worldList.value = temp
+
         busanList = repo.getBusan()
         koreaList = repo.getKorea()
         worldList = repo.getWorld()
     }
+
 
     fun getNowTime() {
         val time = sdfFormat.format(Date(System.currentTimeMillis()))

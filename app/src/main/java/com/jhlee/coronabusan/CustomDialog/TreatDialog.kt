@@ -1,4 +1,4 @@
-package com.jhlee.coronabusan
+package com.jhlee.coronabusan.CustomDialog
 
 
 import android.app.Dialog

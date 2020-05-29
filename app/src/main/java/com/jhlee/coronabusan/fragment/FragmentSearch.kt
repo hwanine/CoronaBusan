@@ -27,7 +27,7 @@ class FragmentSearch : Fragment() {
     private val SEARCH_BUSAN = "코로나 부산 확진"
     private val SEARCH_NORMAL = "코로나 확진"
     private val SEARCH_WORLD = "코로나 세계 확진"
-    private var myUri: Uri = "".toUri()
+
     private var lastRendererTime: Long = SystemClock.elapsedRealtime()
 
     override fun onCreateView(
@@ -35,16 +35,18 @@ class FragmentSearch : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding: FragmentSearchBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_search, container, false)
+
         vm = ViewModelProvider(this).get(SearchViewModel::class.java)
-        searchType(binding)
+        var myUri = vm.uri.value
+            searchType(binding)
         clickListener(binding)
         addEvent(binding)
 
         vm.uri?.observe(viewLifecycleOwner, Observer { uri ->
             if(myUri != uri) {
-                myUri = uri
-                val intent = Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
+                val intent = Intent(Intent.ACTION_VIEW, uri)
+                startActivity(intent)
+                myUri = "".toUri()
             }
         })
 

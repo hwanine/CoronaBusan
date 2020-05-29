@@ -2,6 +2,7 @@ package com.jhlee.coronabusan
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.jhlee.coronabusan.R
 import com.jhlee.coronabusan.adapter.VPAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 

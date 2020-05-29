@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable name="BoardViewModel"
+            type="com.jhlee.coronabusan.BoardViewModel" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+
+
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            app:cardCornerRadius="5dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="12dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="인적사항"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="18"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    android:textSize="11dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="감염경로"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    android:textSize="11dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="접촉자수"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    android:textSize="11dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="격리시설"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="3"
+                    android:textAllCaps="false"
+                    android:textSize="11dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="확진일"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="2"
+                    android:textAllCaps="false"
+                    android:textSize="11dp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

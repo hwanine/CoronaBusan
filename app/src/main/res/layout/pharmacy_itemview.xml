@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable name="BoardViewModel"
+            type="com.jhlee.coronabusan.BoardViewModel" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            app:cardCornerRadius="25dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="12dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_call" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/pharmacy_name"
+                    android:text="수영구 보건소"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="8dp"
+                    android:textSize="25dp"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/maplink"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center|end"
+                    android:src="@drawable/ic_map" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
