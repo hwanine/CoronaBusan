@@ -25,7 +25,7 @@ class FragmentSearch : Fragment() {
 
     private lateinit var vm: SearchViewModel
     private val SEARCH_BUSAN = "코로나 부산 확진"
-    private val SEARCH_NORMAL = "코로나 확진"
+    private val SEARCH_NORMAL = "코로나 국내 확진"
     private val SEARCH_WORLD = "코로나 세계 확진"
 
     private var lastRendererTime: Long = SystemClock.elapsedRealtime()
@@ -85,7 +85,7 @@ class FragmentSearch : Fragment() {
         val str = vm.searchType.value
         when(str) {
             "부산" -> vm.getNews(SEARCH_BUSAN)
-            "" -> vm.getNews(SEARCH_NORMAL)
+            "국내" -> vm.getNews(SEARCH_NORMAL)
             "세계" -> vm.getNews(SEARCH_WORLD)
         }
     }

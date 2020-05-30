@@ -54,7 +54,7 @@
                 android:gravity="center"
                 android:foregroundGravity="center"
                 android:textSize="18dp"
-                android:text="전체"
+                android:text="국내"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"/>
 

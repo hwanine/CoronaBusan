@@ -9,17 +9,17 @@ import androidx.core.net.toUri
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.jhlee.coronabusan.BoardViewModel
 import com.jhlee.coronabusan.DialogViewModel
 import com.jhlee.coronabusan.ViewModel.BoardDialogViewModel
 import kotlinx.android.synthetic.main.list_dialog.view.*
 import kotlinx.android.synthetic.main.listboard_dialog.view.*
 
-class BoardDialog(v: View): DialogFragment() {
+class BoardDialog(v: View, vm: BoardViewModel): DialogFragment() {
     private val v = v
-    private lateinit var vm: BoardDialogViewModel
+    private val vm = vm
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        vm = ViewModelProvider(this).get(BoardDialogViewModel::class.java)
 
         val maindlgBuilder: androidx.appcompat.app.AlertDialog.Builder =
             androidx.appcompat.app.AlertDialog.Builder(    // 메인 다이얼로그
@@ -33,6 +33,7 @@ class BoardDialog(v: View): DialogFragment() {
         }
         vm.init(v.board_RecycleView, vm.getAdapter())
         vm.peopleList.observe(this, Observer { list ->
+            vm.peopleList.value?.size
             vm.getAdapter().addItem(vm.peopleList.value!!)
         })
 

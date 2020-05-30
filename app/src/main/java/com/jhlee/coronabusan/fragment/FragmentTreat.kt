@@ -1,16 +1,19 @@
 package com.jhlee.coronabusan.fragment
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import com.jhlee.coronabusan.CustomDialog.PharmacyDialog
 
 import com.jhlee.coronabusan.R
 import com.jhlee.coronabusan.CustomDialog.TreatDialog
+import com.jhlee.coronabusan.DialogViewModel
 import kotlinx.android.synthetic.main.fragment_treat.view.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -20,12 +23,14 @@ class FragmentTreat : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
+    private lateinit var vm: DialogViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        vm = ViewModelProvider(this).get(DialogViewModel::class.java)
+
         val view = inflater.inflate(R.layout.fragment_treat, container, false)
 
         view.card_view6.setOnClickListener {
@@ -49,7 +54,7 @@ class FragmentTreat : Fragment() {
         view.card_view5.setOnClickListener {
             val pharmacyDlg: View = layoutInflater.inflate(R.layout.list_dialog, null)
             val dlg =
-                PharmacyDialog(pharmacyDlg)
+                PharmacyDialog(pharmacyDlg, vm)
             dlg.show(childFragmentManager, "pharmacyDlg")
         }
         return view.rootView
@@ -66,5 +71,4 @@ class FragmentTreat : Fragment() {
         intent.data = Uri.parse(str)
         startActivity(intent)
     }
-
 }

@@ -118,27 +118,31 @@
 
                 <TextView
                     android:gravity="center"
+                    android:layout_weight="1"
                     android:layout_width="match_parent"
-                    android:textSize="26dp"
-                    android:layout_marginHorizontal="15dp"
+                    android:textSize="24dp"
+                    android:layout_marginHorizontal="10dp"
                     android:text="총 확진자" />
 
                 <TextView
                     android:gravity="center"
-                    android:textSize="26dp"
-                    android:layout_marginHorizontal="15dp"
+                    android:textSize="24dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="10dp"
                     android:layout_height="wrap_content"
                     android:text="완치" />
                 <TextView
                     android:gravity="center"
-                    android:textSize="26dp"
-                    android:layout_marginHorizontal="15dp"
+                    android:textSize="24dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="10dp"
                     android:layout_height="wrap_content"
                     android:text="격리" />
                 <TextView
                     android:gravity="center"
-                    android:textSize="26dp"
-                    android:layout_marginHorizontal="15dp"
+                    android:textSize="24dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="10dp"
                     android:layout_height="wrap_content"
                     android:text="사망" />
 
@@ -154,7 +158,8 @@
                 <TextView
                     android:gravity="center"
                     android:textSize="20dp"
-                    android:layout_marginHorizontal="15dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="10dp"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:text="@{BoardViewModel.busanList.get(0)}"/>
@@ -162,7 +167,8 @@
                 <TextView
                     android:gravity="center"
                     android:textSize="20dp"
-                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:text="@{BoardViewModel.busanList.get(2)}"/>
@@ -170,7 +176,8 @@
                 <TextView
                     android:gravity="center"
                     android:textSize="20dp"
-                    android:layout_marginHorizontal="15dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="10dp"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:text="@{BoardViewModel.busanList.get(3)}"/>
@@ -178,7 +185,8 @@
                 <TextView
                     android:gravity="center"
                     android:textSize="20dp"
-                    android:layout_marginHorizontal="15dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="10dp"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:text="@{BoardViewModel.busanList.get(4)}"/>
@@ -207,6 +215,7 @@
                 android:background="@drawable/search_select"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+
                 android:paddingLeft="2dp"
                 android:paddingRight="2dp"
                 android:text="국내"
@@ -258,26 +267,30 @@
                 <TextView
                     android:gravity="center"
                     android:layout_width="match_parent"
-                    android:textSize="26dp"
-                    android:layout_marginHorizontal="15dp"
+                    android:textSize="24dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="10dp"
                     android:text="총 확진자" />
 
                 <TextView
                     android:gravity="center"
-                    android:textSize="26dp"
-                    android:layout_marginHorizontal="15dp"
+                    android:textSize="24dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="10dp"
                     android:layout_height="wrap_content"
                     android:text="완치" />
                 <TextView
                     android:gravity="center"
-                    android:textSize="26dp"
-                    android:layout_marginHorizontal="15dp"
+                    android:textSize="24dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="10dp"
                     android:layout_height="wrap_content"
                     android:text="격리" />
                 <TextView
                     android:gravity="center"
-                    android:textSize="26dp"
-                    android:layout_marginHorizontal="15dp"
+                    android:textSize="24dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="10dp"
                     android:layout_height="wrap_content"
                     android:text="사망" />
 
@@ -293,7 +306,8 @@
                 <TextView
                     android:gravity="center"
                     android:textSize="20dp"
-                    android:layout_marginHorizontal="15dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="10dp"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:text="@{BoardViewModel.koreaList.get(0)}"/>
@@ -301,7 +315,8 @@
                 <TextView
                     android:gravity="center"
                     android:textSize="20dp"
-                    android:layout_marginHorizontal="15dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="10dp"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:text="@{BoardViewModel.koreaList.get(2)}"/>
@@ -309,7 +324,8 @@
                 <TextView
                     android:gravity="center"
                     android:textSize="20dp"
-                    android:layout_marginHorizontal="15dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="10dp"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:text="@{BoardViewModel.koreaList.get(3)}"/>
@@ -317,7 +333,8 @@
                 <TextView
                     android:gravity="center"
                     android:textSize="20dp"
-                    android:layout_marginHorizontal="15dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="10dp"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:text="@{BoardViewModel.koreaList.get(4)}"/>
@@ -398,22 +415,24 @@
 
                 <TextView
                     android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:textSize="26dp"
-                    android:layout_marginHorizontal="15dp"
+                    android:textSize="24dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="8dp"
                     android:text="총 확진자" />
 
                 <TextView
                     android:gravity="center"
-                    android:textSize="26dp"
-                    android:layout_marginHorizontal="15dp"
+                    android:textSize="24dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="8dp"
                     android:layout_height="wrap_content"
                     android:text="완치" />
 
                 <TextView
                     android:gravity="center"
-                    android:textSize="26dp"
-                    android:layout_marginHorizontal="15dp"
+                    android:textSize="24dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="8dp"
                     android:layout_height="wrap_content"
                     android:text="사망" />
 
@@ -430,7 +449,8 @@
                 <TextView
                     android:gravity="center"
                     android:textSize="20dp"
-                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:text="@{BoardViewModel.worldList.get(0)}"/>
@@ -438,7 +458,8 @@
                 <TextView
                     android:gravity="center"
                     android:textSize="20dp"
-                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:text="@{BoardViewModel.worldList.get(1)}"/>
@@ -446,7 +467,8 @@
                 <TextView
                     android:gravity="center"
                     android:textSize="20dp"
-                    android:layout_marginHorizontal="15dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="8dp"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:text="@{BoardViewModel.worldList.get(2)}"/>

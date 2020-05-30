@@ -16,7 +16,7 @@
 
 
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
@@ -31,50 +31,57 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginHorizontal="12dp"
                 android:orientation="horizontal">
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/busan_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:text="인적사항"
-                    android:layout_marginTop="5dp"
-                    android:layout_weight="18"
-                    android:gravity="center"
+                    android:layout_weight="1.2"
+                    android:layout_marginLeft="3dp"
+                    android:gravity="center_vertical"
                     android:textAllCaps="false"
                     android:textSize="11dp" />
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/busan_route"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:text="감염경로"
-                    android:layout_marginTop="5dp"
+
+                    android:layout_marginLeft="3dp"
                     android:layout_weight="2"
-                    android:gravity="center"
+                    android:gravity="center_vertical"
                     android:textAllCaps="false"
                     android:textSize="11dp" />
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/busan_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:text="접촉자수"
-                    android:layout_marginTop="5dp"
+
+                    android:layout_marginLeft="3dp"
                     android:layout_weight="2"
-                    android:gravity="center"
+                    android:gravity="center_vertical"
                     android:textAllCaps="false"
                     android:textSize="11dp" />
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/busan_hospital"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:text="격리시설"
-                    android:gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:layout_weight="3"
+
+                    android:layout_marginLeft="3dp"
+                    android:gravity="center_vertical"
+                    android:layout_weight="1.9"
                     android:textAllCaps="false"
                     android:textSize="11dp" />
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
+                    android:id="@+id/busan_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="3dp"
                     android:text="확진일"
-                    android:layout_marginTop="5dp"
                     android:layout_weight="2"
                     android:textAllCaps="false"
                     android:textSize="11dp" />

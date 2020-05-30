@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "893010239572",
+    "firebase_url": "https://coronabusan-13541.firebaseio.com",
+    "project_id": "coronabusan-13541",
+    "storage_bucket": "coronabusan-13541.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893010239572:android:42aae9fed57520e0bbcdc1",
+        "android_client_info": {
+          "package_name": "com.jhlee.coronabusan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893010239572-1t3ihi103q7d2a7mfr45mu547bti4gau.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jhlee.coronabusan",
+            "certificate_hash": "0217e06116ebfb47facb8d531f55367e3140b4c3"
+          }
+        },
+        {
+          "client_id": "893010239572-unvejh0278ik0dvudfsqu6lo7vq6j8e0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpUhu4aKL_Z_lOo1-X-R0Mw9qI9hUCeas"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "893010239572-unvejh0278ik0dvudfsqu6lo7vq6j8e0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

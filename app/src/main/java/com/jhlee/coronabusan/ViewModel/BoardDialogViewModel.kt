@@ -12,7 +12,7 @@ import com.jhlee.coronabusan.Model.PharmacyItems
 import com.jhlee.coronabusan.adapter.BoardAdapter
 
 class BoardDialogViewModel(application: Application): AndroidViewModel(application){
-    private val repo : CoronaRepository =
+    /*private val repo : CoronaRepository =
         CoronaRepository(application)
     var peopleList: MutableLiveData<ArrayList<CoronaPeople>> = MutableLiveData<ArrayList<CoronaPeople>>()
     private var pharmacyAdapter =
@@ -31,5 +31,5 @@ class BoardDialogViewModel(application: Application): AndroidViewModel(applicati
         recyclerView.layoutManager = LinearLayoutManager(recyclerView.context)
     }
 
-    fun getAdapter(): BoardAdapter = pharmacyAdapter
+    fun getAdapter(): BoardAdapter = pharmacyAdapter*/
 }

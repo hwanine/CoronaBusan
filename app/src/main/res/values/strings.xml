@@ -1,9 +1,11 @@
 <resources>
-    <string name="app_name">CoronaBusan</string>
+    <string name="app_name">코로나19 부산</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">
         com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior
     </string>
+    <string name="firebase_id">893010239572</string>
+    <string name="token">AAAAz-uO4FQ:APA91bFQ4SuqBP81APNeCZBSiatb0OMnMjWHtWlrznNmaYtYsvr6NDkUjxtnOAsOFBQS3K4mfYAJaWdoYzlEK04SFjzkGK4buGodtVchCItd6k22cHsZQQaLtyvh7DFpf4otsMOakcJA</string>
 </resources>

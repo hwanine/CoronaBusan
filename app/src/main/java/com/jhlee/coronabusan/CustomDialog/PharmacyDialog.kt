@@ -12,12 +12,11 @@ import androidx.lifecycle.ViewModelProvider
 import com.jhlee.coronabusan.DialogViewModel
 import kotlinx.android.synthetic.main.list_dialog.view.*
 
-class PharmacyDialog(v: View): DialogFragment() {
+class PharmacyDialog(v: View, vm: DialogViewModel): DialogFragment() {
     private val v = v
-    private lateinit var vm: DialogViewModel
+    private val vm= vm
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        vm = ViewModelProvider(this).get(DialogViewModel::class.java)
         var clickCheck = vm.click.value
         var clickCheckMap = vm.clickMap.value
 

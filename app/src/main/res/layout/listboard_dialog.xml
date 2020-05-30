@@ -48,52 +48,51 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="인적사항"
             android:layout_marginTop="5dp"
-            android:layout_weight="18"
-            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1.2"
             android:textStyle="bold"
             android:textAllCaps="false"
             android:textSize="12dp" />
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="감염경로"
+            android:text="경로"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="3dp"
+            android:layout_weight="2"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:textSize="12dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="접촉수"
+            android:layout_marginLeft="2dp"
             android:layout_marginTop="5dp"
             android:layout_weight="2"
-            android:gravity="center"
             android:textStyle="bold"
             android:textAllCaps="false"
             android:textSize="12dp" />
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="접촉자수"
+            android:text="격리"
+            android:layout_marginLeft="1dp"
             android:layout_marginTop="5dp"
-            android:layout_weight="2"
-            android:gravity="center"
+            android:layout_weight="1.9"
             android:textStyle="bold"
             android:textAllCaps="false"
             android:textSize="12dp" />
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="격리시설"
-            android:gravity="center"
-            android:layout_marginTop="5dp"
-            android:layout_weight="3"
-            android:textStyle="bold"
-            android:textAllCaps="false"
-            android:textSize="12dp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
             android:text="확진일"
             android:layout_marginTop="5dp"
-            android:layout_weight="2"
+            android:layout_weight="1.98"
             android:textStyle="bold"
             android:textAllCaps="false"
             android:textSize="12dp" />
@@ -132,9 +131,8 @@
             android:id="@+id/board_people_ok"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
             android:gravity="center_horizontal"
-            android:text="확인"
+            android:text="닫기"
             android:textAllCaps="false"
             android:textSize="20dp" />
     </LinearLayout>

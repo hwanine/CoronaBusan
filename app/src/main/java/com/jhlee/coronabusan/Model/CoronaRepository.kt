@@ -2,6 +2,8 @@ package com.jhlee.coronabusan.Model
 
 import android.app.Application
 import android.os.AsyncTask
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.jhlee.coronabusan.api.NaverAPI
@@ -10,6 +12,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
+import org.jsoup.nodes.Element
 import org.jsoup.select.Elements
 import java.io.IOException
 
@@ -24,27 +27,6 @@ class CoronaRepository(application: Application) {
     private val koreaURL = "https://www.gg.go.kr/contents/contents.do?ciIdx=1150&menuId=2909"
     private val worldURL = "https://news.google.com/covid19/map?hl=ko&gl=KR&ceid=KR:ko"
 
-    /*fun getNews(): MutableLiveData<ResultGetSearchNews>{
-        api.getSearchNews("코로나 확진 부산").enqueue(object : Callback<ResultGetSearchNews> {
-            override fun onResponse(
-                call: Call<ResultGetSearchNews>,
-                response: Response<ResultGetSearchNews>
-            ) {
-                newsData.setValue(response.body())
-                //eturnNews(newsData)
-                println("이거걱aaaaa")
-                println("이값음" + newsData.value)
-                //response.body()
-            }
-
-            override fun onFailure(call: Call<ResultGetSearchNews>, t: Throwable) {
-                newsData.setValue(null)
-            }
-
-        })
-        println("이거걱bbbbb")
-        return newsData
-    }*/
 
     fun getPharmacy(): Observable<ArrayList<PharmacyItems>> = Observable.just(pharmacyList)
             .doOnNext { list ->
@@ -182,7 +164,6 @@ class CoronaRepository(application: Application) {
 
     fun getWorld(): MutableLiveData<ArrayList<String>>{
         var list = MutableLiveData<ArrayList<String>>()
-        //list.value.add()
         JsoupAsyncTask(worldURL, list, 2).execute()
         return list
     }
@@ -220,13 +201,12 @@ class JsoupAsyncTask(url: String, list: MutableLiveData<ArrayList<String>>, ck: 
     private var url = url
     private var list = list
     private var ck = ck
-    private val templist = arrayListOf<String>()
+    private var templist = arrayListOf<String>()
 
     override fun doInBackground(vararg params: Void?): Void? {
         try {
             val doc: Document = Jsoup.connect(url).get()
 
-            //테스트1
             if(ck == 0) {
                 for (i in 2..6) {
                     val titles: Elements = doc.select("span.item$i")
@@ -255,8 +235,7 @@ class JsoupAsyncTask(url: String, list: MutableLiveData<ArrayList<String>>, ck: 
             }
         } catch (e: IOException) {
             e.printStackTrace()
-            templist.clear()
-            list.value?.clear()
+            templist = arrayListOf<String>("","","","","")
         }
         return null
     }
@@ -270,15 +249,31 @@ class JsoupAsyncTask2(url: String, list: MutableLiveData<ArrayList<CoronaPeople>
     private var htmlContentInStringFormat = ""
     private var url = url
     private var list = list
-    private val templist = arrayListOf<String>()
+    private val templist = arrayListOf<CoronaPeople>()
+
 
     override fun doInBackground(vararg params: Void?): Void? {
         try {
             val doc: Document = Jsoup.connect(url).get()
-            Log.d("값1","")
-            val titles: Elements = doc.select("div.list_body ul li span")
-            print(titles.text())
-            Log.d("값2",titles.text())
+            var temp = 0
+            var data: Elements = doc.select("div.list_body li:nth-child(1)")
+
+            for(j in 1..data.size) {
+                val tempdata = CoronaPeople()
+                for (i in 1..5) {
+                    var element: Elements =
+                        doc.select("div.list_body ul:nth-child(${j}) li:nth-child(${i})")
+                    when(i) {
+                        1 -> tempdata.name = element[0].text()
+                        2 -> tempdata.route = element[0].text()
+                        3 -> tempdata.num = element[0].text()
+                        4 -> tempdata.hospital = element[0].text()
+                        5 -> tempdata.date = element[0].text()
+                    }
+                    Log.d("값${j}", element[0].text())
+                }
+                templist.add(tempdata)
+            }
             //테스트1
         } catch (e: IOException) {
             e.printStackTrace()
@@ -289,7 +284,7 @@ class JsoupAsyncTask2(url: String, list: MutableLiveData<ArrayList<CoronaPeople>
     }
 
     override fun onPostExecute(result: Void?) {
-        //list.value = templist
+        list.value = templist
     }
 
 }

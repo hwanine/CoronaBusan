@@ -4,17 +4,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.jhlee.coronabusan.BoardViewModel
 import com.jhlee.coronabusan.Model.CoronaPeople
 import com.jhlee.coronabusan.R
 import com.jhlee.coronabusan.ViewModel.BoardDialogViewModel
+import kotlinx.android.synthetic.main.board_itemview.view.*
 
-class BoardAdapter(vm: BoardDialogViewModel) : RecyclerView.Adapter<BoardAdapter.ViewHolder>() {
+class BoardAdapter(vm: BoardViewModel) : RecyclerView.Adapter<BoardAdapter.ViewHolder>() {
     var items = ArrayList<CoronaPeople>()
     val vm = vm
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val itemView = inflater.inflate(R.layout.pharmacy_itemview, parent, false)
+        val itemView = inflater.inflate(R.layout.board_itemview, parent, false)
         return ViewHolder(itemView)
     }
     override fun getItemCount(): Int {
@@ -27,13 +29,14 @@ class BoardAdapter(vm: BoardDialogViewModel) : RecyclerView.Adapter<BoardAdapter
     inner class ViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
 
         fun bind(pos: Int) {
-            /*itemView.pharmacy_name.text = items[pos].title
+            itemView.busan_name.text = items[pos].name
+            itemView.busan_route.text = items[pos].route
+            itemView.busan_num.text = items[pos].num
+            itemView.busan_hospital.text = items[pos].hospital
+            itemView.busan_date.text = items[pos].date
             itemView.setOnClickListener {
-                vm.click.value = pos
+                vm.clickPeople.value = pos
             }
-            itemView.maplink.setOnClickListener {
-                vm.clickMap.value = pos
-            }*/
         }
     }
     fun addItem(items : ArrayList<CoronaPeople>){

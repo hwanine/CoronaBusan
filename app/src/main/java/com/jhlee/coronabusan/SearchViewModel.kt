@@ -45,7 +45,7 @@ class SearchViewModel(application: Application): AndroidViewModel(application){
                 "세계"
             }
             else -> {
-                ""
+                "국내"
             }
         }
         getNewsItem(str)
