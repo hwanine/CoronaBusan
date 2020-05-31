@@ -41,7 +41,7 @@
                     android:layout_marginLeft="3dp"
                     android:gravity="center_vertical"
                     android:textAllCaps="false"
-                    android:textSize="11dp" />
+                    android:textSize="12dp" />
                 <TextView
                     android:id="@+id/busan_route"
                     android:layout_width="match_parent"
@@ -52,7 +52,7 @@
                     android:layout_weight="2"
                     android:gravity="center_vertical"
                     android:textAllCaps="false"
-                    android:textSize="11dp" />
+                    android:textSize="12dp" />
                 <TextView
                     android:id="@+id/busan_num"
                     android:layout_width="match_parent"
@@ -63,7 +63,7 @@
                     android:layout_weight="2"
                     android:gravity="center_vertical"
                     android:textAllCaps="false"
-                    android:textSize="11dp" />
+                    android:textSize="12dp" />
                 <TextView
                     android:id="@+id/busan_hospital"
                     android:layout_width="match_parent"
@@ -74,7 +74,7 @@
                     android:gravity="center_vertical"
                     android:layout_weight="1.9"
                     android:textAllCaps="false"
-                    android:textSize="11dp" />
+                    android:textSize="12dp" />
                 <TextView
                     android:id="@+id/busan_date"
                     android:layout_width="match_parent"
@@ -84,7 +84,7 @@
                     android:text="확진일"
                     android:layout_weight="2"
                     android:textAllCaps="false"
-                    android:textSize="11dp" />
+                    android:textSize="12dp" />
 
             </LinearLayout>
 

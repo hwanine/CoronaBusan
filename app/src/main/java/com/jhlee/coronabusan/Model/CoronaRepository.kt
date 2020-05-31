@@ -2,25 +2,22 @@ package com.jhlee.coronabusan.Model
 
 import android.app.Application
 import android.os.AsyncTask
-import android.os.Handler
-import android.os.Looper
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import com.jhlee.coronabusan.api.MaskAPI
 import com.jhlee.coronabusan.api.NaverAPI
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
-import org.jsoup.nodes.Element
 import org.jsoup.select.Elements
 import java.io.IOException
 
 
 class CoronaRepository(application: Application) {
 
-    private val api = NaverAPI.create()
-    private var newsData: MutableLiveData<ResultGetSearchNews> = MutableLiveData()
+    private val newsApi = NaverAPI.create()
+    private val maskApi = MaskAPI.create()
     private var pharmacyList: ArrayList<PharmacyItems> = arrayListOf()
 
     private val busanURL = "http://www.busan.go.kr/corona19/index"
@@ -29,172 +26,157 @@ class CoronaRepository(application: Application) {
 
 
     fun getPharmacy(): Observable<ArrayList<PharmacyItems>> = Observable.just(pharmacyList)
-            .doOnNext { list ->
-                list.add(
-                    PharmacyItems(
-                        "강서구 보건소",
-                        "051-970-3415",
-                        "https://m.place.naver.com/hospital/36477562/location?entry=ple&subtab=location"
-                    )
+        .doOnNext { list ->
+            list.add(
+                PharmacyItems(
+                    "강서구 보건소",
+                    "051-970-3415",
+                    "https://m.place.naver.com/hospital/36477562/location?entry=ple&subtab=location"
                 )
-                list.add(
-                    PharmacyItems(
-                        "금정구 보건소",
-                        "051-519-5051",
-                        "https://m.place.naver.com/hospital/11629456/location?entry=ple&subtab=location"
-                    )
+            )
+            list.add(
+                PharmacyItems(
+                    "금정구 보건소",
+                    "051-519-5051",
+                    "https://m.place.naver.com/hospital/11629456/location?entry=ple&subtab=location"
                 )
-                list.add(
-                    PharmacyItems(
-                        "기장군 보건소",
-                        "051-709-4791",
-                        "https://m.place.naver.com/hospital/12433892/location?entry=ple&subtab=location"
-                    )
+            )
+            list.add(
+                PharmacyItems(
+                    "기장군 보건소",
+                    "051-709-4791",
+                    "https://m.place.naver.com/hospital/12433892/location?entry=ple&subtab=location"
                 )
-                list.add(
-                    PharmacyItems(
-                        "남구 보건소",
-                        "051-607-6460",
-                        "https://m.place.naver.com/hospital/12166396/location?entry=ple&subtab=location"
-                    )
+            )
+            list.add(
+                PharmacyItems(
+                    "남구 보건소",
+                    "051-607-6460",
+                    "https://m.place.naver.com/hospital/12166396/location?entry=ple&subtab=location"
                 )
-                list.add(
-                    PharmacyItems(
-                        "동구 보건소",
-                        "051-440-6501",
-                        "https://m.place.naver.com/hospital/12166397/location?entry=ple&subtab=location"
-                    )
+            )
+            list.add(
+                PharmacyItems(
+                    "동구 보건소",
+                    "051-440-6501",
+                    "https://m.place.naver.com/hospital/12166397/location?entry=ple&subtab=location"
                 )
-                list.add(
-                    PharmacyItems(
-                        "동래구 보건소",
-                        "051-555-4000",
-                        "https://m.place.naver.com/hospital/11667956/location?entry=ple&subtab=location"
-                    )
+            )
+            list.add(
+                PharmacyItems(
+                    "동래구 보건소",
+                    "051-555-4000",
+                    "https://m.place.naver.com/hospital/11667956/location?entry=ple&subtab=location"
                 )
-                list.add(
-                    PharmacyItems(
-                        "부산진구 보건소",
-                        "051-645-4000",
-                        "https://m.place.naver.com/hospital/11667955/location?entry=ple&subtab=location"
-                    )
+            )
+            list.add(
+                PharmacyItems(
+                    "부산진구 보건소",
+                    "051-645-4000",
+                    "https://m.place.naver.com/hospital/11667955/location?entry=ple&subtab=location"
                 )
-                list.add(
-                    PharmacyItems(
-                        "북구 보건소",
-                        "051-309-4500",
-                        "https://m.place.naver.com/hospital/11667949/location?entry=ple&subtab=location"
-                    )
+            )
+            list.add(
+                PharmacyItems(
+                    "북구 보건소",
+                    "051-309-4500",
+                    "https://m.place.naver.com/hospital/11667949/location?entry=ple&subtab=location"
                 )
-                list.add(
-                    PharmacyItems(
-                        "사상구 보건소",
-                        "051-310-4791",
-                        "https://m.place.naver.com/hospital/19514661/location?entry=ple&subtab=location"
-                    )
+            )
+            list.add(
+                PharmacyItems(
+                    "사상구 보건소",
+                    "051-310-4791",
+                    "https://m.place.naver.com/hospital/19514661/location?entry=ple&subtab=location"
                 )
-                list.add(
-                    PharmacyItems(
-                        "사하구 보건소",
-                        "051-220-5701",
-                        "https://m.place.naver.com/hospital/11667953/location?entry=ple&subtab=location"
-                    )
+            )
+            list.add(
+                PharmacyItems(
+                    "사하구 보건소",
+                    "051-220-5701",
+                    "https://m.place.naver.com/hospital/11667953/location?entry=ple&subtab=location"
                 )
-                list.add(
-                    PharmacyItems(
-                        "서구 보건소",
-                        "051-240-4791",
-                        "https://m.place.naver.com/hospital/11667948/location?entry=ple&subtab=location"
-                    )
+            )
+            list.add(
+                PharmacyItems(
+                    "서구 보건소",
+                    "051-240-4791",
+                    "https://m.place.naver.com/hospital/11667948/location?entry=ple&subtab=location"
                 )
-                list.add(
-                    PharmacyItems(
-                        "수영구 보건소",
-                        "051-752-4000",
-                        "https://m.place.naver.com/hospital/11667950/location?entry=ple&subtab=location"
-                    )
+            )
+            list.add(
+                PharmacyItems(
+                    "수영구 보건소",
+                    "051-752-4000",
+                    "https://m.place.naver.com/hospital/11667950/location?entry=ple&subtab=location"
                 )
-                list.add(
-                    PharmacyItems(
-                        "연제구 보건소",
-                        "051-665-4781",
-                        "https://m.place.naver.com/hospital/11668832/location?entry=ple&subtab=location"
-                    )
+            )
+            list.add(
+                PharmacyItems(
+                    "연제구 보건소",
+                    "051-665-4781",
+                    "https://m.place.naver.com/hospital/11668832/location?entry=ple&subtab=location"
                 )
-                list.add(
-                    PharmacyItems(
-                        "영도구 보건소",
-                        "051-419-4901",
-                        "https://m.place.naver.com/hospital/11667952/location?entry=ple&subtab=location"
-                    )
+            )
+            list.add(
+                PharmacyItems(
+                    "영도구 보건소",
+                    "051-419-4901",
+                    "https://m.place.naver.com/hospital/11667952/location?entry=ple&subtab=location"
                 )
-                list.add(
-                    PharmacyItems(
-                        "중구 보건소",
-                        "051-600-4741",
-                        "https://m.place.naver.com/hospital/11667946/location?entry=ple&subtab=location"
-                    )
+            )
+            list.add(
+                PharmacyItems(
+                    "중구 보건소",
+                    "051-600-4741",
+                    "https://m.place.naver.com/hospital/11667946/location?entry=ple&subtab=location"
                 )
-                list.add(
-                    PharmacyItems(
-                        "해운대구 보건소",
-                        "051-746-4000",
-                        "https://m.place.naver.com/hospital/11667951/location?entry=ple&subtab=location"
-                    )
-                ) }
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
+            )
+            list.add(
+                PharmacyItems(
+                    "해운대구 보건소",
+                    "051-746-4000",
+                    "https://m.place.naver.com/hospital/11667951/location?entry=ple&subtab=location"
+                )
+            )
+        }
+        .subscribeOn(Schedulers.io())
+        .observeOn(AndroidSchedulers.mainThread())
 
-    fun getNews(n: Int, str: String): Observable<ResultGetSearchNews> = api
+    fun getNews(n: Int, str: String): Observable<ResultGetSearchNews> = newsApi
         .getSearchNews(str, 10, n)
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
 
-    fun getBusan(): MutableLiveData<ArrayList<String>>{
+    fun getMaskLatlng(lat: Double, lng: Double): Observable<ResultGetMaskData> = maskApi
+        .getMaskLatlng(lat, lng, 4000)
+        .subscribeOn(Schedulers.io())
+        .observeOn(AndroidSchedulers.mainThread())
+
+    fun getBusan(): MutableLiveData<ArrayList<String>> {
         var list = MutableLiveData<ArrayList<String>>()
         JsoupAsyncTask(busanURL, list, 0).execute()
         return list
     }
 
-    fun getKorea(): MutableLiveData<ArrayList<String>>{
+    fun getKorea(): MutableLiveData<ArrayList<String>> {
         var list = MutableLiveData<ArrayList<String>>()
         JsoupAsyncTask(koreaURL, list, 1).execute()
         return list
     }
 
-    fun getWorld(): MutableLiveData<ArrayList<String>>{
+    fun getWorld(): MutableLiveData<ArrayList<String>> {
         var list = MutableLiveData<ArrayList<String>>()
         JsoupAsyncTask(worldURL, list, 2).execute()
         return list
     }
 
-    fun getBusanNum(): MutableLiveData<ArrayList<CoronaPeople>>{
+    fun getBusanNum(): MutableLiveData<ArrayList<CoronaPeople>> {
         var list = MutableLiveData<ArrayList<CoronaPeople>>()
         //list.value.add()
         JsoupAsyncTask2(busanURL, list).execute()
         return list
     }
-
-/*     fun getBusan2(): Single<ArrayList<String>> {
-        return Single.fromObservable(
-            Observable.create {
-                val busanList: ArrayList<String> = ArrayList()
-                val doc: Document =
-                    Jsoup.connect(busanURL)
-                        .get() // Base Url
-                for (i in 2..6) {
-                    val contentElements: Elements =
-                        doc.select("span.item$i") // title, link
-                    val titles: Elements = doc.select("span.item$i")
-                    val index = titles.text().indexOf("명")
-                    val str = titles.text().substring(0, index) + " 명"
-                    busanList.add(str)
-                }
-                it.onNext(busanList)
-                it.onComplete()
-            }
-        )
-    }*/
 }
 
 class JsoupAsyncTask(url: String, list: MutableLiveData<ArrayList<String>>, ck: Int) : AsyncTask<Void?, Void?, Void?>() {
@@ -270,7 +252,6 @@ class JsoupAsyncTask2(url: String, list: MutableLiveData<ArrayList<CoronaPeople>
                         4 -> tempdata.hospital = element[0].text()
                         5 -> tempdata.date = element[0].text()
                     }
-                    Log.d("값${j}", element[0].text())
                 }
                 templist.add(tempdata)
             }
@@ -286,5 +267,4 @@ class JsoupAsyncTask2(url: String, list: MutableLiveData<ArrayList<CoronaPeople>
     override fun onPostExecute(result: Void?) {
         list.value = templist
     }
-
 }

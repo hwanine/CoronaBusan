@@ -11,7 +11,6 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.jhlee.coronabusan.Model.CoronaRepository
 import com.jhlee.coronabusan.Model.NewsItems
-import com.jhlee.coronabusan.Model.ResultGetSearchNews
 import com.jhlee.coronabusan.adapter.NewsAdapter
 import java.text.SimpleDateFormat
 import java.util.*
@@ -20,7 +19,6 @@ import kotlin.collections.ArrayList
 
 @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class SearchViewModel(application: Application): AndroidViewModel(application){
-    private var newsResult: MutableLiveData<ResultGetSearchNews> = MutableLiveData()
     var newsItem: ArrayList<NewsItems> = arrayListOf()
     private val repo : CoronaRepository =
         CoronaRepository(application)

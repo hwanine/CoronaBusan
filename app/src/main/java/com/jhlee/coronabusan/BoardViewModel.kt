@@ -26,8 +26,9 @@ class BoardViewModel(application: Application): AndroidViewModel(application){
     var worldList: MutableLiveData<ArrayList<String>> = MutableLiveData<ArrayList<String>>()
     var peopleList: MutableLiveData<ArrayList<CoronaPeople>> = MutableLiveData<ArrayList<CoronaPeople>>()
     var clickPeople: MutableLiveData<Int> = MutableLiveData<Int>(-1)
+    var checkGetPeople: Int = 0
 
-    private var pharmacyAdapter =
+    private var boardAdapter =
         BoardAdapter(this)
 
     init {
@@ -46,7 +47,6 @@ class BoardViewModel(application: Application): AndroidViewModel(application){
         worldList = repo.getWorld()
     }
 
-
     fun getNowTime() {
         val time = sdfFormat.format(Date(System.currentTimeMillis()))
         Handler(Looper.getMainLooper()).post { nowTimer.value = time }
@@ -62,6 +62,6 @@ class BoardViewModel(application: Application): AndroidViewModel(application){
         recyclerView.layoutManager = LinearLayoutManager(recyclerView.context)
     }
 
-    fun getAdapter(): BoardAdapter = pharmacyAdapter
+    fun getAdapter(): BoardAdapter = boardAdapter
 
 }

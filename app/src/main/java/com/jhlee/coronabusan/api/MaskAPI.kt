@@ -1,5 +1,6 @@
 package com.jhlee.coronabusan.api
 
+import com.jhlee.coronabusan.Model.ResultGetMaskData
 import com.jhlee.coronabusan.Model.ResultGetSearchNews
 import io.reactivex.Observable
 import okhttp3.Interceptor
@@ -11,20 +12,18 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface CoronaAPI {
-    @GET("getCovid19SidoInfStateJson")
-    fun getCorona(
-        @Query("ServiceKey") query: String,
-        @Query("pageNo") display: Int? = null,
-        @Query("numOfRows") start: Int? = null
-    ): Observable<ResultGetSearchNews>
+interface MaskAPI {
+    @GET("storesByGeo/json")
+    fun getMaskLatlng(
+        @Query("lat") lat: Double,
+        @Query("lng") display: Double,
+        @Query("m") start: Int
+    ): Observable<ResultGetMaskData>
 
     companion object {
-        private const val BASE_URL_CORONA_API = "http://openapi.data.go.kr/openapi/service/rest/Covid19/"
-        private const val SECRET_KEY = "qU%2FRcD2liz0yuptI0vDQhZ4PqpY5LqGACqvUxwBaz2F%2FfDgUVMtdDUiVeyg6jeKDQyLPxQYgmOMQ2XIi%2FdgNUw%3D%3D"
+        private const val BASE_URL_MASK_API = "https://8oi9s0nnth.apigw.ntruss.com/corona19-masks/v1/"
 
-
-        fun create(): CoronaAPI {
+        fun create(): MaskAPI {
             val httpLoggingInterceptor = HttpLoggingInterceptor()
             httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
 
@@ -41,12 +40,12 @@ interface CoronaAPI {
                 .build()
 
             return Retrofit.Builder()
-                .baseUrl(BASE_URL_CORONA_API)
+                .baseUrl(BASE_URL_MASK_API)
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
-                .create(CoronaAPI::class.java)
+                .create(MaskAPI::class.java)
         }
     }
 }

@@ -9,42 +9,22 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.firebase.iid.FirebaseInstanceId
-import com.google.firebase.messaging.FirebaseMessaging
 
 class SplashActivity : AppCompatActivity() {
 
     @SuppressLint("StringFormatInvalid")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        FirebaseInstanceId.getInstance().instanceId
-            .addOnCompleteListener(OnCompleteListener { task ->
-                if (!task.isSuccessful) {
-                    Log.w("TAG", "getInstanceId failed", task.exception)
-                    return@OnCompleteListener
-                }
 
-                // Get new Instance ID token
-                val token = task.result?.token
-
-                // Log and toast R.string.msg_token_fmt
-                val msg = getString(R.string.token, token)
-                Log.d("TAG", msg)
-                Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
-            })
-        FirebaseMessaging.getInstance().isAutoInitEnabled = true
         Thread.sleep(500)
         NetworkCheck()
     }
 
-    fun NetworkIsValid(context: Context) : Boolean {
+    fun NetworkIsValid(context: Context): Boolean {
         var result = false
         val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             val networkCapabilities = cm.activeNetwork ?: return false
             val actNw = cm.getNetworkCapabilities(networkCapabilities) ?: return false
             result = when {
@@ -56,7 +36,7 @@ class SplashActivity : AppCompatActivity() {
         } else {
             cm.run {
                 cm.activeNetworkInfo?.run {
-                    result = when(type) {
+                    result = when (type) {
                         ConnectivityManager.TYPE_WIFI -> true
                         ConnectivityManager.TYPE_MOBILE -> true
                         ConnectivityManager.TYPE_ETHERNET -> true
@@ -69,7 +49,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     fun NetworkCheck() {
-        if(NetworkIsValid(this)) {
+        if (NetworkIsValid(this)) {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
@@ -79,7 +59,7 @@ class SplashActivity : AppCompatActivity() {
             dlg.setMessage("본 앱은 인터넷 연결이 필요합니다.\n네트워크 상태를 확인해주세요.") // 메시지
             dlg.setCancelable(false)
             dlg.setPositiveButton("재시도", DialogInterface.OnClickListener { dialog, which ->
-                if(NetworkIsValid(this)) {
+                if (NetworkIsValid(this)) {
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
                     finish()

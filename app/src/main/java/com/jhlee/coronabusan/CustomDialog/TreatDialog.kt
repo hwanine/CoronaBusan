@@ -2,10 +2,6 @@ package com.jhlee.coronabusan.CustomDialog
 
 
 import android.app.Dialog
-import android.content.res.Configuration
-
-import android.graphics.drawable.Drawable
-
 import android.os.Bundle
 
 import android.view.View

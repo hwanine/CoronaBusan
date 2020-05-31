@@ -1,6 +1,5 @@
 package com.jhlee.coronabusan.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -16,7 +15,6 @@ class NewsAdapter(viewModel: SearchViewModel) : RecyclerView.Adapter<NewsAdapter
         return ViewHolder(binding)
     }
 
-
     override fun getItemCount(): Int = viewModel.getNewsItem().size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -27,7 +25,6 @@ class NewsAdapter(viewModel: SearchViewModel) : RecyclerView.Adapter<NewsAdapter
         val binding = binding
 
         fun bind(viewModel: SearchViewModel, pos: Int) {
-            Log.d("사이즈","")
             binding.pos = pos
             binding.searchViewModel = viewModel
             binding.executePendingBindings()

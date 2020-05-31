@@ -480,24 +480,48 @@
 
     </androidx.cardview.widget.CardView>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
         <androidx.cardview.widget.CardView
             android:id="@+id/board_people"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:layout_marginLeft="5dp"
+            app:cardCornerRadius="30dp"
+            android:layout_weight="0.5"
+            app:cardUseCompatPadding="true">
+
+            <TextView
+                android:gravity="center"
+                android:textSize="23dp"
+                android:layout_marginHorizontal="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="부산시 확진자 목록 보기"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/alert_fcm"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
             android:layout_marginRight="5dp"
+            android:layout_weight="1"
             app:cardCornerRadius="30dp"
             app:cardUseCompatPadding="true">
 
             <TextView
                 android:gravity="center"
-                android:textSize="30dp"
-                android:layout_marginHorizontal="15dp"
+                android:textSize="23dp"
+                android:layout_marginHorizontal="3dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="부산 확진자 목록 보기"/>
+                android:text="알림 설정"/>
 
         </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
     </LinearLayout>
     </ScrollView>

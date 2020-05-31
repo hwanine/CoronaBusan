@@ -1,0 +1,38 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="512dp"
+    android:height="512dp"
+    android:viewportWidth="512"
+    android:viewportHeight="512">
+  <path
+      android:pathData="m376,452c0,44.75 -74.051,60 -120,60 -45.539,0 -120,-15.102 -120,-60 0,-29.828 36.93,-52.871 94.07,-58.699h51.859c57.141,5.828 94.07,28.871 94.07,58.699zM376,452"
+      android:fillColor="#8bf2cf"/>
+  <path
+      android:pathData="m376,452c0,44.75 -74.051,60 -120,60v-118.699h25.93c57.141,5.828 94.07,28.871 94.07,58.699zM376,452"
+      android:fillColor="#57d9ad"/>
+  <path
+      android:pathData="m256,460.375 l-137.344,-164.137c-27.508,-32.457 -42.656,-73.738 -42.656,-116.238 0,-99.254 80.746,-180 180,-180s180,80.746 180,180c0,42.52 -15.16,83.816 -42.691,116.277zM256,460.375"
+      android:fillColor="#ff637b"/>
+  <path
+      android:pathData="m256,0v460.375l137.309,-164.098c27.531,-32.461 42.691,-73.758 42.691,-116.277 0,-99.254 -80.746,-180 -180,-180zM256,0"
+      android:fillColor="#e63950"/>
+  <path
+      android:pathData="m376,180c0,44.328 -24.148,83.109 -60,103.891h-120c-35.852,-20.781 -60,-59.563 -60,-103.891 0,-66.172 53.828,-120 120,-120s120,53.828 120,120zM376,180"
+      android:fillColor="#fff7cc"/>
+  <path
+      android:pathData="m376,180c0,44.328 -24.148,83.109 -60,103.891h-60v-223.891c66.172,0 120,53.828 120,120zM376,180"
+      android:fillColor="#ffe6b3"/>
+  <path
+      android:pathData="m316,270v13.891c-17.66,10.238 -38.16,16.109 -60,16.109s-42.34,-5.871 -60,-16.109v-13.949c0.039,-33.063 26.941,-59.941 60,-59.941 33.078,0 60,26.922 60,60zM316,270"
+      android:fillColor="#725d57"/>
+  <path
+      android:pathData="m256,120c-24.809,0 -45,20.191 -45,45s20.191,45 45,45 45,-20.191 45,-45 -20.191,-45 -45,-45zM256,120"
+      android:fillColor="#ffbfab"/>
+  <path
+      android:pathData="m256,210v-90c24.809,0 45,20.191 45,45s-20.191,45 -45,45zM256,210"
+      android:fillColor="#ffa78f"/>
+  <path
+      android:pathData="m316,270v13.891c-17.66,10.238 -38.16,16.109 -60,16.109v-90c33.078,0 60,26.922 60,60zM316,270"
+      android:fillColor="#53433f"/>
+</vector>
+
+<!-- 아이콘 제작자 <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a> -->

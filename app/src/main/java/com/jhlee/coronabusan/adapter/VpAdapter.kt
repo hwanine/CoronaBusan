@@ -25,13 +25,13 @@ class VPAdapter(fm: FragmentManager?) :
     init {
         items.add(FragmentSearch())
         items.add(FragmentBoard())
-        items.add(FragmentMap())
         items.add(FragmentTreat())
+        items.add(FragmentMap())
 
         itext.add("관련 기사")
         itext.add("현황판")
-        itext.add("코로나 맵")
         itext.add("대처법")
+        itext.add("마스크 맵")
     }
 
     override fun getPageTitle(position: Int): CharSequence? {

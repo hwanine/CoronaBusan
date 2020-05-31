@@ -1,7 +1,6 @@
 package com.jhlee.coronabusan.fragment
 
 import android.content.Intent
-import android.content.res.Configuration
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -16,13 +15,7 @@ import com.jhlee.coronabusan.CustomDialog.TreatDialog
 import com.jhlee.coronabusan.DialogViewModel
 import kotlinx.android.synthetic.main.fragment_treat.view.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-
 class FragmentTreat : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
     private lateinit var vm: DialogViewModel
 
     override fun onCreateView(

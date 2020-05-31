@@ -8,7 +8,6 @@ import android.view.View
 import androidx.core.net.toUri
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.jhlee.coronabusan.DialogViewModel
 import kotlinx.android.synthetic.main.list_dialog.view.*
 

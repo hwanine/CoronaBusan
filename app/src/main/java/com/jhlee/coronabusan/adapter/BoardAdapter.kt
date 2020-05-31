@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.jhlee.coronabusan.BoardViewModel
 import com.jhlee.coronabusan.Model.CoronaPeople
 import com.jhlee.coronabusan.R
-import com.jhlee.coronabusan.ViewModel.BoardDialogViewModel
 import kotlinx.android.synthetic.main.board_itemview.view.*
 
 class BoardAdapter(vm: BoardViewModel) : RecyclerView.Adapter<BoardAdapter.ViewHolder>() {

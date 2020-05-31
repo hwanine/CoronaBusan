@@ -6,6 +6,7 @@
     <string name="appbar_scrolling_view_behavior" translatable="false">
         com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior
     </string>
-    <string name="firebase_id">893010239572</string>
-    <string name="token">AAAAz-uO4FQ:APA91bFQ4SuqBP81APNeCZBSiatb0OMnMjWHtWlrznNmaYtYsvr6NDkUjxtnOAsOFBQS3K4mfYAJaWdoYzlEK04SFjzkGK4buGodtVchCItd6k22cHsZQQaLtyvh7DFpf4otsMOakcJA</string>
+    <string name="firebase_id">7133207896662735021</string>
+    <string name="token">AAAAz-uO4FQ:APA91bFP3ti-R2vu5axJ-WoDomz56t86i5APu_5FTPj9zaHiodb4LakY3XWZzGRQXyUj-L_GgaHNYvTXGVXD66F95M_hYjilS9kAZfkBRkhaEL-5FO3UhpuQTjTiIQeMbQNx800aCafS</string>
+    <string name="google_maps_key">AIzaSyBeDU_6vOL_CTFgicabA3JkzxnJYaeDO8A</string>
 </resources>
