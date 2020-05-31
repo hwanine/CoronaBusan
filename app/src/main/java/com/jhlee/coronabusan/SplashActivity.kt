@@ -10,13 +10,18 @@ import android.net.NetworkCapabilities
 import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.messaging.FirebaseMessaging
 
 class SplashActivity : AppCompatActivity() {
 
     @SuppressLint("StringFormatInvalid")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        if(SharePreferences.prefs.getAlert("splash", 0) == 0) {
+            FirebaseMessaging.getInstance().subscribeToTopic("alert")
+                .addOnCompleteListener { task -> }
+            SharePreferences.prefs.setAlert("splash", 1)
+        }
         Thread.sleep(500)
         NetworkCheck()
     }
