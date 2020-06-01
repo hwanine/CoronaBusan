@@ -20,6 +20,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.gms.maps.*
@@ -132,6 +133,11 @@ class FragmentMap : Fragment(), OnMapReadyCallback {
             vm.getMaskLatlng(lat, lng)
             getMyLocation("내 위치")
         } catch(e: Exception) {
+            Toast.makeText(
+                context,
+                "내 위치를 보시려면 위치 서비스를 활성화하고 권한을 허용해주세요.",
+                Toast.LENGTH_LONG
+            ).show()
             vm.getMaskLatlng(vm.legacylat, vm.legacylng)
             getMyLocation("임시 위치")
         }

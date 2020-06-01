@@ -113,13 +113,14 @@ class MainActivity : AppCompatActivity() {
 // 3.  위치 값을 가져올 수 있음
         } else { //2. 퍼미션 요청을 허용한 적이 없다면 퍼미션 요청이 필요합니다. 2가지 경우(3-1, 4-1)가 있습니다.
 // 3-1. 사용자가 퍼미션 거부를 한 적이 있는 경우에는
+
             if (ActivityCompat.shouldShowRequestPermissionRationale(
                     this,
                     REQUIRED_PERMISSIONS[0]
                 )
             ) { // 3-2. 요청을 진행하기 전에 사용자가에게 퍼미션이 필요한 이유를 설명해줄 필요가 있습니다.
-                Toast.makeText(this, "이 앱을 실행하려면 위치 접근 권한이 필요합니다.", Toast.LENGTH_LONG).show()
                 // 3-3. 사용자게에 퍼미션 요청을 합니다. 요청 결과는 onRequestPermissionResult에서 수신됩니다.
+                //Toast.makeText(this, "이 앱을 실행하려면 위치 접근 권한이 필요합니다.", Toast.LENGTH_LONG).show()
                 ActivityCompat.requestPermissions(
                     this, REQUIRED_PERMISSIONS,
                     PERMISSIONS_REQUEST_CODE
