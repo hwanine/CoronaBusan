@@ -18,6 +18,8 @@ class MapViewModel(application: Application): AndroidViewModel(application) {
     var maskLatlngList: MutableLiveData<ArrayList<MaskLatlon>> =
         MutableLiveData<ArrayList<MaskLatlon>>()
     var List: ArrayList<MaskLatlon> = arrayListOf()
+    var legacylat: Double = 35.157662
+    var legacylng: Double = 129.059111
 
     @SuppressLint("CheckResult")
     fun getMaskLatlng(lat: Double, lng: Double) {
@@ -28,7 +30,6 @@ class MapViewModel(application: Application): AndroidViewModel(application) {
                 if(ResultGetMaskData.stores[i].remain_stat != "break") {
                     List.add(ResultGetMaskData.stores[i])
                     maskLatlngList.value = List
-                    Log.d("값값2", maskLatlngList.value?.size.toString())
                 }
             }
         }

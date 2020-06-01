@@ -90,7 +90,7 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="이         름: "
+                        android:text="이        름: "
                         android:textStyle="bold" />
 
                     <androidx.appcompat.widget.AppCompatTextView
@@ -106,7 +106,7 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="판         매: "
+                        android:text="판        매: "
                         android:textStyle="bold" />
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/marker_type"
@@ -121,7 +121,7 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="주         소: "
+                    android:text="주        소: "
                     android:textStyle="bold" />
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/marker_addr"

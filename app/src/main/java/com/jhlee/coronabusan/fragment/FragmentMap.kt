@@ -39,6 +39,7 @@ class FragmentMap : Fragment(), OnMapReadyCallback {
     private lateinit var vm: MapViewModel
     private var lat: Double = 0.0
     private var lng: Double = 0.0
+
     private lateinit var marker_home: View
     private lateinit var marker_plenty: View
     private lateinit var marker_some: View
@@ -116,17 +117,24 @@ class FragmentMap : Fragment(), OnMapReadyCallback {
             rootView.card_view.visibility = View.GONE
         }
         getMask()
+        vm.legacylat = lat
+        vm.legacylng = lng
 
         markerRendering()
     }
 
     private fun getMask() {
         vm.maskLatlngList.value?.clear()
-        gpsTracker = GpsTracker(context!!)
-        lat = gpsTracker!!.getLatitude()
-        lng = gpsTracker!!.getLongitude()
-        vm.getMaskLatlng(lat, lng)
-        getMyLocation()
+        try {
+            gpsTracker = GpsTracker(context!!)
+            lat = gpsTracker!!.getLatitude()
+            lng = gpsTracker!!.getLongitude()
+            vm.getMaskLatlng(lat, lng)
+            getMyLocation()
+        } catch(e: Exception) {
+            vm.getMaskLatlng(vm.legacylat, vm.legacylng)
+            getMyLocation()
+        }
     }
 
     private fun getMyLocation() {
