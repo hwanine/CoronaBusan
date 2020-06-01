@@ -37,8 +37,8 @@ class FragmentMap : Fragment(), OnMapReadyCallback {
     private lateinit var mMap: GoogleMap
     private var gpsTracker: GpsTracker? = null
     private lateinit var vm: MapViewModel
-    private var lat: Double = 0.0
-    private var lng: Double = 0.0
+    private var lat: Double = 35.157662
+    private var lng: Double = 129.059111
 
     private lateinit var marker_home: View
     private lateinit var marker_plenty: View
@@ -130,16 +130,16 @@ class FragmentMap : Fragment(), OnMapReadyCallback {
             lat = gpsTracker!!.getLatitude()
             lng = gpsTracker!!.getLongitude()
             vm.getMaskLatlng(lat, lng)
-            getMyLocation()
+            getMyLocation("내 위치")
         } catch(e: Exception) {
             vm.getMaskLatlng(vm.legacylat, vm.legacylng)
-            getMyLocation()
+            getMyLocation("임시 위치")
         }
     }
 
-    private fun getMyLocation() {
+    private fun getMyLocation(str: String) {
         val marker_latlng = LatLng(lat, lng)
-        var initMarker = mMap.addMarker(MarkerOptions().position(marker_latlng).title("내 위치").icon(BitmapDescriptorFactory.fromBitmap
+        var initMarker = mMap.addMarker(MarkerOptions().position(marker_latlng).title(str).icon(BitmapDescriptorFactory.fromBitmap
             (createDrawableFromView(context!!, marker_home))))
         initMarker.tag = "myloc"
         initMarker.showInfoWindow()
