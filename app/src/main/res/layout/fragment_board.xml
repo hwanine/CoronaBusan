@@ -385,7 +385,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{BoardViewModel.worldList.get(3)}"
+                android:text="@{BoardViewModel.worldList.get(5)}"
                 android:textStyle="bold">
             </TextView>
 
@@ -453,7 +453,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:text="@{BoardViewModel.worldList.get(0)}"/>
+                    android:text="@{BoardViewModel.worldList.get(1)}"/>
 
                 <TextView
                     android:gravity="center"
@@ -462,7 +462,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:text="@{BoardViewModel.worldList.get(1)}"/>
+                    android:text="@{BoardViewModel.worldList.get(3)}"/>
 
                 <TextView
                     android:gravity="center"

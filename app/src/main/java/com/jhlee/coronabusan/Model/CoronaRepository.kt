@@ -22,7 +22,7 @@ class CoronaRepository(application: Application) {
 
     private val busanURL = "http://www.busan.go.kr/corona19/index"
     private val koreaURL = "https://www.gg.go.kr/contents/contents.do?ciIdx=1150&menuId=2909"
-    private val worldURL = "https://news.google.com/covid19/map?hl=ko&gl=KR&ceid=KR:ko"
+    private val worldURL = "https://en.wikipedia.org/wiki/Template:COVID-19_pandemic_data"
 
 
     fun getPharmacy(): Observable<ArrayList<PharmacyItems>> = Observable.just(pharmacyList)
@@ -204,11 +204,11 @@ class JsoupAsyncTask(url: String, list: MutableLiveData<ArrayList<String>>, ck: 
 
                 }
             } else {
-                var titles: Elements = doc.select("div.UvMayb")
+                var titles: Elements = doc.select("tr.sorttop")
                 System.out.println("title: " + titles.text().split(" "))
                 templist.addAll(titles.text().split(" "))
                 for(i in 0..2)
-                    templist[i] = templist[i] + " 명"
+                    templist[i+1] = templist[i+1] + " 명"
 
                 val doc: Document = Jsoup.connect("https://www.google.com/search?q=%EC%A0%84%EC%84%B8%EA%B3%84+%EC%BD%94%EB%A1%9C%EB%82%98+%ED%98%84%ED%99%A9%ED%8C%90&oq=%EC%A0%84%EC%84%B8%EA%B3%84+%EC%BD%94%EB%A1%9C%EB%82%98+%ED%98%84%ED%99%A9%ED%8C%90&aqs=chrome..69i57.438j0j7&sourceid=chrome&ie=UTF-8").get() // 세계 일일 코로나 확진자 수
                 titles = doc.select("div.h5Hgwe")
