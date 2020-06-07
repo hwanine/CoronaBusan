@@ -1,11 +1,10 @@
 package com.jhlee.coronabusan
 
 import android.annotation.SuppressLint
-import android.app.Application
 import android.os.Handler
 import android.os.Looper
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.jhlee.coronabusan.Model.CoronaPeople
@@ -14,9 +13,9 @@ import com.jhlee.coronabusan.adapter.BoardAdapter
 import java.text.SimpleDateFormat
 import java.util.*
 
-class BoardViewModel(application: Application): AndroidViewModel(application){
+class BoardViewModel(): ViewModel(){
     private val repo : CoronaRepository =
-        CoronaRepository(application)
+        CoronaRepository()
     @SuppressLint("SimpleDateFormat")
     val sdfFormat: SimpleDateFormat = SimpleDateFormat("MM월 dd일 (E) HH:mm:ss")
     var nowTimer: MutableLiveData<String> = MutableLiveData<String>("")

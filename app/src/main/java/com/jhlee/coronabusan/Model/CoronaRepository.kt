@@ -14,7 +14,7 @@ import org.jsoup.select.Elements
 import java.io.IOException
 
 
-class CoronaRepository(application: Application) {
+class CoronaRepository() {
 
     private val newsApi = NaverAPI.create()
     private val maskApi = MaskAPI.create()

@@ -1,20 +1,18 @@
 package com.jhlee.coronabusan
 
 import android.annotation.SuppressLint
-import android.app.Application
-import android.util.Log
 
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.jhlee.coronabusan.Model.CoronaRepository
 import com.jhlee.coronabusan.Model.MaskLatlon
 
 import java.util.*
 
-class MapViewModel(application: Application): AndroidViewModel(application) {
+class MapViewModel(): ViewModel() {
 
     private val repo: CoronaRepository =
-        CoronaRepository(application)
+        CoronaRepository()
     var maskLatlngList: MutableLiveData<ArrayList<MaskLatlon>> =
         MutableLiveData<ArrayList<MaskLatlon>>()
     var List: ArrayList<MaskLatlon> = arrayListOf()
