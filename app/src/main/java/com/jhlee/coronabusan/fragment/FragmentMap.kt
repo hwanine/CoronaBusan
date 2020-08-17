@@ -64,6 +64,7 @@ class FragmentMap : Fragment(), OnMapReadyCallback {
         vm = ViewModelProvider(this).get(MapViewModel::class.java)
 
         setCustomMarkerView()
+
         mapFragment.getMapAsync(this)
         rootView.refresh_loaction.setOnClickListener {
             rootView.card_view.visibility = View.GONE
@@ -127,6 +128,7 @@ class FragmentMap : Fragment(), OnMapReadyCallback {
     private fun getMask() {
         vm.maskLatlngList.value?.clear()
         try {
+
             gpsTracker = GpsTracker(context!!)
             lat = gpsTracker!!.getLatitude()
             lng = gpsTracker!!.getLongitude()

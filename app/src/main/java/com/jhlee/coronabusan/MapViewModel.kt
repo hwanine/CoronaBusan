@@ -23,7 +23,7 @@ class MapViewModel(): ViewModel() {
     fun getMaskLatlng(lat: Double, lng: Double) {
         List.clear()
         maskLatlngList.value = arrayListOf(MaskLatlon("","","","","",0.0,0.0,"",""))
-        repo.getMaskLatlng(lat, lng).subscribe { ResultGetMaskData ->
+        repo.getMaskLatlng(lat, lng)?.subscribe { ResultGetMaskData ->
             for (i in ArrayList(ResultGetMaskData.stores).indices) {
                 if(ResultGetMaskData.stores[i].remain_stat != "break") {
                     List.add(ResultGetMaskData.stores[i])
@@ -31,6 +31,5 @@ class MapViewModel(): ViewModel() {
                 }
             }
         }
-
     }
 }

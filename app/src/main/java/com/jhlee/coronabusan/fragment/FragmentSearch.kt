@@ -1,6 +1,7 @@
 package com.jhlee.coronabusan.fragment
 
 import android.content.Intent
+import android.content.Intent.getIntent
 import android.graphics.Typeface
 import android.os.Bundle
 import android.os.SystemClock

@@ -148,8 +148,9 @@ class CoronaRepository() {
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
 
-    fun getMaskLatlng(lat: Double, lng: Double): Observable<ResultGetMaskData> = maskApi
+    fun getMaskLatlng(lat: Double, lng: Double): Observable<ResultGetMaskData>? = maskApi
         .getMaskLatlng(lat, lng, 4000)
+        .onErrorReturn { t -> ResultGetMaskData(0, arrayListOf(MaskLatlon("","","","","",0.0,0.0,"",""))) }
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
 
